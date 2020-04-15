@@ -14,7 +14,7 @@ module Decidim
 
       export_data = Decidim::Exporters.find_exporter(format).new(collection, serializer).export
 
-      ExportMailer.export(user, name, export_data).deliver_later
+      ExportMailer.export(user, name, export_data).deliver_now
     end
   end
 end
