@@ -31,7 +31,7 @@ module Decidim
 
           expect(ExportMailer)
             .to(receive(:export).with(user, anything, export_data))
-            .and_return(double(deliver_now: true))
+            .and_return(double(deliver_later: true))
 
           ExportJob.perform_now(user, component, "dummies", "CSV")
         end
@@ -47,7 +47,7 @@ module Decidim
 
           expect(ExportMailer)
             .to(receive(:export).with(user, anything, export_data))
-            .and_return(double(deliver_now: true))
+            .and_return(double(deliver_later: true))
 
           ExportJob.perform_now(user, component, "dummies", "JSON")
         end

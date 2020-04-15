@@ -87,7 +87,7 @@ module Decidim
             end.to have_enqueued_job(ActionMailer::DeliveryJob).with(
               "Decidim::DecidimDeviseMailer",
               "confirmation_instructions",
-              "deliver_now",
+              "deliver_later",
               user,
               kind_of(String),
               {}
