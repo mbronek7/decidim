@@ -173,7 +173,7 @@
         let link = $("a", this.current.target);
         link.data("picker-value", data.value);
         link.attr("href", data.url);
-        link.text(dataText);
+        link.html(dataText);
         choosenOption = this.current.target;
       } else {
         let input = "hidden",
